@@ -1,5 +1,5 @@
 FROM alpine
-MAINTAINER Christian Gatzlaff <cgatzlaff@gmail.com>
+MAINTAINER Jesse Wei <web.jesse@gmail.com>
 
 # basic flask environment
 RUN apk add --no-cache bash git nginx uwsgi uwsgi-python py2-pip \
