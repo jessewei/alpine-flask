@@ -1,6 +1,5 @@
 # [Alpine OS](https://hub.docker.com/_/alpine/) running [Python Flask](http://flask.pocoo.org/) (with Python 2.7 or 3.5)
 
-[![](https://images.microbadger.com/badges/image/jazzdd/alpine-flask.svg)](https://microbadger.com/images/jazzdd/alpine-flask "Get your own image badge on microbadger.com")
 
 
 ## Tags:
@@ -14,7 +13,7 @@ This image is used to run flask applications. To start a container use
 docker run --name flaskapp --restart=always \
 	-p 80:80 \
 	-v /path/to/app/:/app \
-	-d jazzdd/alpine-flask
+	-d jessewei/alpine-flask
 ```
 
 `-v /path/to/app/:/app` - specifies the path to the folder containing a file named app.py, which should be your main application
@@ -52,7 +51,7 @@ docker run --name flaskapp --restart=always \
     -p 80:80 \
     -v /path/to/app/:/app \
     -v /var/run/docker.sock:/var/run/docker.sock \
-    -d jazzdd/alpine-flask -o gid
+    -d jessewei/alpine-flask -o gid
 ```
 
 `-o gid` enables the docker option (docker will be installed into the container on the first run). GID is the docker group id of your host system. The container matches the gid of the docker group and adds the nginx user (this user is running nginx and uwsgi) to the docker group.
@@ -61,7 +60,7 @@ Now you could use:
 
 ```
 from subprocess import call
-call(["docker", "run", "-p 80" ,"-v /path/to/app/:/app", "-d jazzdd/alpine-flask"])
+call(["docker", "run", "-p 80" ,"-v /path/to/app/:/app", "-d jessewei/alpine-flask"])
 ```
 to get another container running with the flask app.
 
@@ -75,7 +74,7 @@ To start a container in debug mode use:
 docker run --name flaskapp --restart=always \
 	-p 80:80 \
 	-v /path/to/app/:/app \
-	-d jazzdd/alpine-flask -d
+	-d jessewei/alpine-flask -d
 ```
 
 Your app.py file must have a section similiar to the following example to start the app within the debug mode.
