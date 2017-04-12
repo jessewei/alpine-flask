@@ -1,4 +1,5 @@
-FROM alpine
+#FROM alpine
+FROM ubuntu:14.04
 MAINTAINER Jesse Wei <web.jesse@gmail.com>
 
 # basic flask environment
